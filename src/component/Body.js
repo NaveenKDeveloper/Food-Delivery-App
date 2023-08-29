@@ -1,8 +1,20 @@
 import Card from './Card'; 
-import {useState} from 'react';
+import { SWIGGY_API } from '../utils/constants';
+import {useState,useEffect} from 'react';
 
 const Body = () => {
   const [listOfRestaurant,setlistOfRestaurant] = useState([]);
+
+    useEffect(()=>{
+      fetchData()
+    },[])
+
+    const fetchData = async () => {
+      const data = await fetch(SWIGGY_API)
+      const json = await data.json()
+      setlistOfRestaurant(json.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      
+    }
     return (
       <div className="body">
         {/* <div className="search">Search</div> */}
@@ -15,7 +27,7 @@ const Body = () => {
         <div className="res-container">
           {
             listOfRestaurant.map((eachItem) =>  { return (
-            <Card key={eachItem.data.id} resData = {eachItem} />)} )
+            <Card key={eachItem.info.id} resData = {eachItem} />)} )
           }
         </div>
       </div>
