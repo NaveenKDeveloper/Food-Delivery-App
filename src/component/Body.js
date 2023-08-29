@@ -1,9 +1,8 @@
 import Card from './Card'; 
-import restaurantList from '../utils/mockData';
 import {useState} from 'react';
 
 const Body = () => {
-  const [listOfRestaurant,setlistOfRestaurant] = useState(restaurantList);
+  const [listOfRestaurant,setlistOfRestaurant] = useState([]);
     return (
       <div className="body">
         {/* <div className="search">Search</div> */}
