@@ -1,6 +1,7 @@
 import Card from './Card'; 
 import { SWIGGY_API } from '../utils/constants';
 import {useState,useEffect} from 'react';
+import Shimmer from './Shimmer';
 
 const Body = () => {
   const [listOfRestaurant,setlistOfRestaurant] = useState([]);
@@ -15,7 +16,8 @@ const Body = () => {
       setlistOfRestaurant(json.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
       
     }
-    return (
+    
+    return listOfRestaurant.length === 0  ?  <Shimmer  /> : (
       <div className="body">
         {/* <div className="search">Search</div> */}
         <button onClick={()=> {
