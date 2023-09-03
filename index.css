@@ -71,3 +71,8 @@
 .filters{
   display: flex;
 }
+
+a{
+  text-decoration: none;
+  color : inherit ;
+}
