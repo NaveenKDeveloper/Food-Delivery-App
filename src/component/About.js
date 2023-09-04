@@ -4,21 +4,12 @@ import { Component } from 'react'
 
 class About extends Component{
 
-  constructor(){
-    super()
-    console.log("Parent constructor")
-  }
-
-  componentDidMount(){
-    console.log("Parent Mount")
-}
-
   render(){
-    console.log("Parent render")
     return (
       <div>
         {/*  <User name={"(Functional Based)"}/> */}
       <UserClass name={"(Class Based)"} location={"Bengaluru"}/>
+
       </div>
      
     )
