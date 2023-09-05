@@ -6,15 +6,17 @@ class UserClass extends React.Component {
         super(props)
 
         this.state = {
-            name : "Naveen K",
-            location : "Bengaluru"
+            userInfo : {
+                name : "Naveen K",
+                location : "Bengaluru"
+            }
         }
     }
 
     async componentDidMount(){
         const data = await fetch("https://api.github.com/users/NAVEENKDEVELOPER");
         const json = await data.json();
-        this.setState(json)
+        this.setState({userInfo : json})
     }
 
     componentDidUpdate(){
@@ -26,7 +28,7 @@ class UserClass extends React.Component {
     }
 
     render(){
-        const {name,location} = this.state;
+        const {name,location} = this.state.userInfo;
         return (
             <div>
                 <h2>Name : {name}</h2>
