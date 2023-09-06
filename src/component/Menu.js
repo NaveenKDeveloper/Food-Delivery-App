@@ -12,7 +12,7 @@ const Menu = () =>{
     }
 
     const {name,costForTwoMessage,cuisines} = menu?.cards[0]?.card?.card?.info
-    const menuItems = menu.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards
+    const menuItems = menu?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards
     return (
         <div className="menu-Container"> 
             <h1>{name}</h1>
