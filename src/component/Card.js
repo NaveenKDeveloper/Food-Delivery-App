@@ -7,8 +7,8 @@ const Card = (props) => {
       sla} = resData?.info
     
     return (
-      <div className="card">
-        <img alt="card-image" className="card-image" src={CARD_IMAGE_URL + cloudinaryImageId}  /> 
+      <div className="w-52 m-5 hover:w-48 duration-500">
+        <img alt="card-image" className="w-52 rounded-2xl" src={CARD_IMAGE_URL + cloudinaryImageId}  /> 
       <div className="card-details">
       <h3>{name}</h3>
       <h4>Delicious  {cuisines.join(", ")}</h4>
