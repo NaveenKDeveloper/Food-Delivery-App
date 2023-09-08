@@ -62,9 +62,6 @@ const Body = () => {
           }
         }>Search</button>
         </div>
-      
-
-      
         </div> 
       
       <div className="flex flex-wrap">
