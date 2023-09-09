@@ -25,8 +25,8 @@ export const withPromotedLabel = (Card) =>{
       return (props)=>{
         return (
           <div>
-            <label>Promoted</label>
-            <Card />
+            <label className='absolute bg-black rounded-md text-white p-1 m-1 '>Promoted</label>
+            <Card {...props}/>
           </div>
         )
       }

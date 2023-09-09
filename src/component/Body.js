@@ -10,6 +10,8 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredList, setfilteredList] = useState([]);
 
+  const CardPromotedLabel = withPromotedLabel(Card)
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -63,8 +65,12 @@ const Body = () => {
         </div> 
       
       <div className="flex flex-wrap">
-        {filteredList.map((eachItem) => {
-          return <Link to={"/restaurants/" + eachItem.info.id } key={eachItem.info.id}><Card  resData={eachItem} /></Link>;
+        {filteredList.map((eachItem,index) => {
+          return <Link to={"/restaurants/" + eachItem.info.id } key={eachItem.info.id}>
+            {
+              (index == 0) ? <CardPromotedLabel resData={eachItem}/> : <Card  resData={eachItem} />
+            }
+            </Link>;
         })}
       </div>
     </div>
