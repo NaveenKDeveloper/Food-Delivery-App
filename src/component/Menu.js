@@ -27,7 +27,7 @@ const Menu = () =>{
             <h1 className="font-bold my-3">{name}</h1>
             <p>{cuisines.join(" ,")} - {costForTwoMessage}</p>
             {categories.map((category,index) => <MenuCategory categoryData={category?.card?.card} key={category?.card?.card?.title} 
-            showItem={index === showItem ? true : false}
+            showItem={(index === showItem) ? true : false}
             setShowItem={()=>setShowItem(index)}/>)}
         </div>
     )
