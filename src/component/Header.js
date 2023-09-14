@@ -1,10 +1,12 @@
 import {APP_LOGO} from '../utils/constants';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from 'react-router-dom';
+import UserContext from '../utils/UserContext';
 
 const Header = () => 
 {
   const [btnName,setBtnName] =  useState("Login")
+  const {user} = useContext(UserContext)
 return (
 
     <div className="border-b-2 shadow-md">
@@ -21,7 +23,7 @@ return (
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/contact">Contact Us</Link></li>
           <li>Cart</li>
-          <button className="btn-login" onClick={()=> btnName == "Login" ? setBtnName("Logout") : setBtnName("Login") }>{btnName}</button>
+          <button className="btn-login" onClick={()=> btnName == "Login" ? setBtnName("Logout") : setBtnName("Login") }>{btnName}-{user}</button>
         </ul>
       </div>
       </div>
