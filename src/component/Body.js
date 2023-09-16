@@ -1,9 +1,10 @@
 import Card,{withPromotedLabel} from "./Card";
 import { SWIGGY_API } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus"
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurant, setlistOfRestaurant] = useState([]);
@@ -11,6 +12,8 @@ const Body = () => {
   const [filteredList, setfilteredList] = useState([]);
 
   const CardPromotedLabel = withPromotedLabel(Card)
+
+  const {user,setLoggedUser} = useContext(UserContext)
 
   useEffect(() => {
     fetchData();
@@ -62,6 +65,11 @@ const Body = () => {
           }
         }>Search</button>
         </div>
+        {/* <div className="search" >
+        <input type="text" className="bg-gray-200 rounded-lg" value={user}  onChange={ (e)=>{
+          setLoggedUser(e.target.value)
+        }} />
+        </div> */}
         </div> 
       
       <div className="flex flex-wrap">

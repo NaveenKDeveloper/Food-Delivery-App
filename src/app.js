@@ -1,4 +1,4 @@
-import React,{lazy,Suspense} from "react";
+import React,{lazy,Suspense,useEffect,useState,useEffect} from "react";
 import ReactDOM from "react-dom/client";
 import Header from './component/Header';
 import Body from './component/Body';
@@ -7,16 +7,34 @@ import Error from "./component/Error";
 import Contact from "./component/Contact";
 //import Menu from "./component/Menu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import UserContext from "./utils/UserContext";
 
 
 const Menu = lazy(()=> import("./component/Menu"))
 
-const AppLayout = () => (
-  <div className="app">
-    <Header />
-    <Outlet />
-  </div>
-);
+const AppLayout = () => 
+{
+  const [loggedUser, setLoggedUser] = useState()
+
+  useEffect(()=>{
+    const data = {
+      user:"Naveen K"
+    }
+
+    setLoggedUser(data.user)
+  },[])
+ return (
+    <UserContext.Provider value={{user:loggedUser,setLoggedUser}}>
+    <div className="app">
+      <Header />
+      <Outlet />
+    </div>
+    </UserContext.Provider>
+    
+  );
+}
+
+
 
 const router = createBrowserRouter([
   {
