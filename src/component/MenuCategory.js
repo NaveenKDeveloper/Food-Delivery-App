@@ -12,7 +12,7 @@ const MenuCategory = ({categoryData,showItem,setShowItem})=>{
                 <span className="font-extrabold text-sm text-[#3e4152]">{categoryData.title} ({categoryData.itemCards.length})</span>
             <span>🔽</span>
             </div>
-            {showItem && <ItemsList items={categoryData.itemCards} key={categoryData.title}/>}
+            {showItem && <ItemsList items={categoryData.itemCards} key={categoryData.title} isShow={true}/>}
         </div>
         
     )
