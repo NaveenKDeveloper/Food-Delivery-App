@@ -4,7 +4,7 @@ import "@testing-library/jest-dom"
 
 
 describe("Contact us test cases",()=>{
-    test("Should load contact us component",()=>{
+    it("Should load contact us component",()=>{
 
         render(<Contact />)
         const heading = screen.getByRole("heading")
@@ -12,7 +12,7 @@ describe("Contact us test cases",()=>{
         expect(heading).toBeInTheDocument()
     })
     
-    test("Should load button in contact us component",()=>{
+    it("Should load button in contact us component",()=>{
         render(<Contact/>)
     
         const button = screen.getByText("Submit")
