@@ -1,1 +1,1 @@
-# Food App Using React js
+# Food Web App Using React js, Redux
