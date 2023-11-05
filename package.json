@@ -26,7 +26,8 @@
   "scripts": {
     "start": "parcel index.html --no-cache",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "watch-test":"jest --watch"
   },
   "keywords": [
     "React",
